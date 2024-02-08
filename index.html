@@ -5,22 +5,33 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+  <link rel="icon" href="../curso-api-rest-javascript-practico-movie-app/movie.png" type="image/png">
+
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@700;800&family=Red+Hat+Display:wght@400;500&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="./styles/app.css" />
 
-  <title>PlatziMovies</title>
+  <title>Movies</title>
 </head>
 <body>
   <header id="header" class="header-container">
+
+    <div class="selectLanguages">
+      <select name="languages" class="selectLanguages-options">
+        <option value="null">Idioma</option>
+        <option value="es-ES">Español</option>
+        <option value="en">Ingles</option>
+      </select>
+    </div>
+    
     <span class="header-arrow inactive">&lt;</span>
-    <h1 class="header-title">PlatziMovies</h1>
+    <h1 class="header-title">Movies</h1>
     <h1 class="header-title header-title--categoryView inactive">Acción</h1>
 
     <form id="searchForm" class="header-searchForm">
-      <input type="text" placeholder="Vengadores" />
-      <button>🔍</button>
+      <input type="text" placeholder="Buscar" />
+      <button type="button" id="searchBtn">🔍</button>
     </form>
   </header>
 
@@ -31,13 +42,19 @@
     </div>
 
     <article class="trendingPreview-movieList">
-      <!-- <div class="movie-container">
-        <img
+      <div class="movie-container movie-container--loading"></div>
+      <div class="movie-container movie-container--loading"></div>
+      <div class="movie-container movie-container--loading">
+        <!-- <img
           src="https://image.tmdb.org/t/p/w300/adOzdWS35KAo21r9R4BuFCkLer6.jpg"
           class="movie-img"
           alt="Nombre de la película"
         />
-      </div> -->
+        <div>
+          <p id="nameMovi">PELICULA</p>
+          <p>V</p>
+        </div> -->
+      </div>
     </article>
   </section>
 
@@ -45,43 +62,42 @@
     <h2 class="categoriesPreview-title">Categorías</h2>
 
     <article class="categoriesPreview-list">
-      <div class="category-container">
-        <h3 id="id28" class="category-title">Romance</h3>
-      </div>
-
-      <div class="category-container">
-        <h3 id="id16" class="category-title">Drama</h3>
-      </div>
-
-      <div class="category-container">
-        <h3 id="id14" class="category-title">Acción</h3>
+      <div class="category-container category-container--loading"></div>
+      <div class="category-container category-container--loading"></div>
+      <div class="category-container category-container--loading">
+        <!-- <h3 id="id28" class="category-title">Romance</h3> -->
       </div>
     </article>
   </section>
 
+  <section id="liked" class="liked-container">
+    <div class="liked-header">
+      <h2 class="liked-title">Peliculas favoritas</h2>
+    </div>
+    <article class="liked-movieList">
+      <!-- <div class="movie-container ">
+        <img
+          class="movie-img"
+          alt="No hay peliculas"
+        />
+        <div>
+          <p id="nameMovi"></p>
+          <p>V</p>
+        </div>
+      </div> -->
+      
+    </article>
+  </section>
+
   <section id="genericList" class="genericList-container inactive">
-    <div class="movie-container">
-      <img
+    <div class="movie-container movie-container--loading"></div>
+    <div class="movie-container movie-container--loading"></div>
+    <div class="movie-container movie-container--loading">
+      <!-- <img
         src="https://image.tmdb.org/t/p/w300/adOzdWS35KAo21r9R4BuFCkLer6.jpg"
         class="movie-img"
         alt="Nombre de la película"
-      />
-    </div>
-
-    <div class="movie-container">
-      <img
-        src="https://image.tmdb.org/t/p/w300/adOzdWS35KAo21r9R4BuFCkLer6.jpg"
-        class="movie-img"
-        alt="Nombre de la película"
-      />
-    </div>
-
-    <div class="movie-container">
-      <img
-        src="https://image.tmdb.org/t/p/w300/adOzdWS35KAo21r9R4BuFCkLer6.jpg"
-        class="movie-img"
-        alt="Nombre de la película"
-      />
+      /> -->
     </div>
   </section>
 
@@ -93,16 +109,10 @@
     </p>
 
     <article class="categories-list">
-      <div class="category-container">
-        <h3 id="id28" class="category-title">Romance</h3>
-      </div>
-
-      <div class="category-container">
-        <h3 id="id16" class="category-title">Drama</h3>
-      </div>
-
-      <div class="category-container">
-        <h3 id="id14" class="category-title">Acción</h3>
+      <div class="category-container category-container--loading"></div>
+      <div class="category-container category-container--loading"></div>
+      <div class="category-container category-container--loading">
+        <!-- <h3 id="id14" class="category-title">Acción</h3> -->
       </div>
     </article>
 
@@ -111,35 +121,25 @@
 
       <div class="relatedMovies-scrollContainer">
         <div class="movie-container">
-          <img
-            src="https://image.tmdb.org/t/p/w300/adOzdWS35KAo21r9R4BuFCkLer6.jpg"
-            class="movie-img"
-            alt="Nombre de la película"
-          />
+          <p>No Hay peliculas similares</p>
+        </div>
+
+        <div class="movie-container movie-container--loading"></div>
+        <div class="movie-container movie-container--loading"></div>
+        <div class="movie-container movie-container--loading">
+          <!-- <p>No Hay peliculas similares</p> -->
         </div>
         
-        <div class="movie-container">
-          <img
-            src="https://image.tmdb.org/t/p/w300/adOzdWS35KAo21r9R4BuFCkLer6.jpg"
-            class="movie-img"
-            alt="Nombre de la película"
-          />
-        </div>
-        
-        <div class="movie-container">
-          <img
-            src="https://image.tmdb.org/t/p/w300/adOzdWS35KAo21r9R4BuFCkLer6.jpg"
-            class="movie-img"
-            alt="Nombre de la película"
-          />
-        </div>
       </div>
     </article>
   </section>
 
   <footer>Redes sociales</footer>
   
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
   <script src="./src/secrets.js"></script>
+  <script src="./src/nodes.js"></script>
   <script src="./src/main.js"></script>
+  <script src="./src/navigation.js"></script>
 </body>
 </html>
